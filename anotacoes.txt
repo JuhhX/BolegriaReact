@@ -1,0 +1,152 @@
+// INFORMAÇÕES GERAIS //
+=> Em main.jsx temos o principal da aplicação: 
+    * O react-DOM cria a árvore do HTML
+    * Fazemos os imports dos arquivos css e das paginas em jsx
+
+=> Como o React usa o carregamento de renderizar apenas uma página, então ela utiliza apenas um CSS.
+    Apenas importando o arquivo ele ja será utilizado, sendo assim posso separar cada página com seu próprio CSS
+    reaproveitando itens repetidos inserindo a mesma className
+
+=> Usar o evento onClick={function()} vai fazer com que a função seja disparada quando a pagina for renderizada
+ao invés deve se usar onClick={() => {function()}} para passar esse evento para o onClick
+
+=> O metódo onClick do botões recarregam as páginas, para prevenir isso devemos pegar o parametro "e" e usar seu método e.preventDefault();
+    onClick={(e) => {function(e)}}
+    function(e){
+        e.preventDefault();
+        //Código aqui
+    }
+
+=> valores do useState() devem ser pegos com (variavel.target.value)
+
+=> Para mostrar um elemento html a partir de um loop fazemos:
+    const itensRender = [];
+
+    const ItemView = (itemToRender) => {
+        return(
+            <div className="itemViewPrinciapal">
+                
+                <h1>{itemToRender.nome}</h1>
+            </div>
+        )
+    };
+
+    itens.forEach(element => {
+        
+        itensRender.push(ItemView(element));
+        
+    })
+
+=> Para criar listas em React primeiro devemos setar uma constante que deverá receber todos os dados
+    const [dados, setDados] = useState([]); ou const [dados, setDados] = useState(vetor_com_dados);
+
+    Dentro do HTML colocamos dentro do <UL> o seguinte código, que pegará dado por dado e inserirá dentro do LI
+    *Importante lembrar de passar uma key para o LI, que pode ser o próprio dado, mas de preferencia um id numerico
+    *Podemos passar também esse dado "item" para um componente customizado como {meuComponente(item)}
+
+    {dados.map((item) => (
+        <li key={item}>{item}</li>
+    ))}
+
+    Inserimos novos dados em uma função com: 
+    *Os ...dados é necessário para que o React mantenha os valores que já estão la dentro
+
+    setDados([...dados, NOVO_VALOR])
+
+    *O vetor.map() recebe como parametros (item) => (componenteHTML), não usar (item) => {}
+
+* LEMBRAR DE COLOCAR DENTRO DE UM <UL> ou <OL> e os <LI> OS DADOS A SEREM RENDERIZADOS
+
+
+// NAVEGAÇÃO ENTRE PÁGINAS EM REACT //
+=> Em main.jsx temos o principal da aplicação:
+    * O react router dom serve para que possamos navegar de uma página para outra, então teremos: 
+        = A tag <BrowserRouter>, contendo a tag <Routes> que conterá a tag <Route>
+        = A tag Route pode ser fechada nela mesma ou com </Route> permitindo que seja inserida outras Rotas dentro dela
+        = A tag Route tem os atributos path="" onde passamos a rota/link e component={<Item />} onde <Item /> é a função
+        importada para renderizar
+
+=> import { Link } from "react-router-dom";
+    * Esse Link serve como o useNavigation() do react native, usamos (<Link to="/"> Home </Link>) para navegar até a rota
+
+=> import { useNavigate } from "react-router-dom";
+    * Podemos usar também o useNavigate para navegar;
+    let navigate = useNavigate();
+    navigate(`/invoices/${newInvoice.id}`); // Especificamos a rota e seus parametros
+
+=> Para passar parametros usando Link precisamos colocar state={{chave: valor}} dentro de sua tag
+    * Na tela que receberá os dados importamos (import { useLocation } from "react-router-dom";)
+    * Usamos (const location = useLocation();) para conseguir pegar os valores
+    * (const {chave} = location.state;) dentro dessa variavel ficará o valor que passamos, podemos inserir ele no html através de <h1>{chave}</h1> por exemplo
+
+
+// ICONES //
+=> Instalar o fontawesome com:
+npm i @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/react-fontawesome
+    usar --save depois do install para instalar o fontawesome para todos os próximos projetos
+
+=> Uso:
+    import ReactDOM from 'react-dom'
+    import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+    import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+    const element = <FontAwesomeIcon icon={faCoffee} />
+
+    //Usamos dessa forma para mudar o estilo dos icones
+    Light:
+    <FontAwesomeIcon icon={["fal", "coffee"]} />
+    
+    Regular:
+    <FontAwesomeIcon icon={["far", "coffee"]} />
+    
+    Solid
+    <FontAwesomeIcon icon={["fas", "coffee"]} />
+    
+    ...or, omit as FontAwesome defaults to solid, so no need to prefix:
+    <FontAwesomeIcon icon="coffee" />
+   
+    Brand:
+    <FontAwesomeIcon icon={["fab", "github"]} />
+
+    //Existem icones que são protegidos e não podem ser usados
+
+// JSON-SERVER //
+=> Instalamos o json-server globalmente usando (npm install -g json-server)
+=> Rodamos ele usando (npm json-server --watch db.json --port 3000)
+
+=> Para pegar dados do servidor
+    useEffect(() => {
+            fetch("http://localhost:3000/usuarios", { //Pegamos o que o json-server retorna nesse link
+                method: "GET",                        //Indicamos que vamos usar o metodo GET
+                headers: {
+                    "Content-Type": "application/json", //Indicamos que queremos pegar um Json
+                },
+            }).then((resp) => resp.json())            //Transformamos a resposta devolvida pelo server em json
+            .then((data) => {
+                setUserData(data);                    //Colocamos esses dados em uma variavel
+                // console.log(data);
+            })
+            .catch(error => console.log(error));      //Caso ocorra um erro ele entrará nesse bloco
+        }, []);                                       //Os [] são necessarios para que o React guarde o que recebeu e não fique verificando novamente
+
+=> Para inserir dados no servidor
+    var dados = {               //Criamos um objeto onde inserimos todos os dados pegos pelo formulário
+        id: 3,
+        username: nome.target.value,
+        email: email.target.value,
+        senha: senha.target.value,
+        celular: celular.target.value,
+        cep: cep.target.value,
+    }
+
+    setUserData(dados);        //Colocamos esses dados em uma variavel do useState();
+
+    fetch("http://localhost:3000/usuarios", {       //Conectamos no json-server novamente
+        method: "POST",                             //Informamos que iremos usar o método POST
+        headers: {
+            "Content-Type": "application/json",     //Informamos que será passado um arquivo JSON
+        },
+        body: JSON.stringify(dados)                 //Na mensagem principal "body" informamos que passaremos um JSON em forma de string que estara localizado na variavel dados
+    })

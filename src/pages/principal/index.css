@@ -1,0 +1,361 @@
+
+section.sectionPrincipal{
+    width: 100%;
+    overflow: auto;
+}
+
+main.mainPrincipal{
+    width: 100%;
+    background-color: #D9D9D9;
+    position: relative;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}
+
+li.itemViewPrincipal{
+    width: 70%;
+    height: 15%;
+    background-color: #FFF;
+    margin-left: 15%;
+    margin-top: 5%;
+    position: relative;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 10% 80% 10%;
+}
+
+div.itemViewImage{
+    grid-row-start: 2;
+}
+
+div.itemViewInform{
+    grid-column-start: 2;
+    grid-row-start: 2;
+}
+
+img.itemViewItem{
+    width: 80%;
+    height: 90%;
+    border-radius: 25px;
+    margin-left: 10%;
+    margin-top: 3%;
+    cursor: pointer;
+}
+/*B6DFD7*/
+h1.itemViewName{
+    text-align: center;
+    font-weight: bold;
+    font-size: 4.5vmin;
+    color: #DB7093;
+    margin-top: 15%;
+}
+
+button.itemViewButton{
+    width: 45%;
+    height: 15%;
+    margin-left: 27%;
+    color: #FFF;
+    background: #B6DFD7;
+    font-size: 3vmin;
+    border: none;
+    cursor: pointer; margin-top: 5%;
+}
+
+button.itemViewButton:hover{
+    background: #6eb2df;
+}
+
+div.imageZoom{
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    background-color: rgb(0 0 0 / 50%);
+    z-index: 1;
+    visibility: hidden;
+}
+
+img.zoomImagem{
+    width: 50%;
+    height: 90%;
+    margin-top: 2%;
+    margin-left: 25%;
+    border-radius: 25px;
+}
+
+.iconeVoltar{
+    color: #FFF;
+    font-size: 6vmin;
+    position: absolute;
+    margin-left: 10%;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.iconeVoltar:hover{
+    color: #6eb2df;
+}
+
+div.itemView{
+    width: 80%;
+    background-color: #FFF;
+    margin-left: 5%;
+    border-radius: 25px;
+    display: flex;
+    padding: 5%;
+    justify-content: space-between;
+}
+
+img.itemImage{
+    width: 45%;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+div.itemViewInfos{
+    width: 45%;
+    background: #d6f1ec;
+    border-radius: 25px;
+    padding: 3%;
+}
+
+div.itemViewInfos h1{
+    text-align: center;
+    font-size: 5vmin;
+    margin-top: 15%;
+    color: #DB7093;
+}
+
+div.itemViewInfos p:nth-child(2){
+    font-size: 3vmin;
+    text-align: center;
+    color: #8b8b8b;
+}
+
+div.itemViewInfos p:nth-child(3){
+    font-weight: bold;
+    font-size: 3.5vmin;
+    text-align: center;
+    color: #8b8b8b
+}
+
+@keyframes hoverButton {
+    from {background-color: #DB7093;}
+    to {background-color: #6eb2df;}
+}
+
+div.itemViewInfos button{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+    padding: 2%;
+    background: #DB7093;
+    color: #FFF;
+    font-size: 3vmin;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+div.itemViewInfos button:hover{
+    animation-name: hoverButton;
+    animation-duration: 1s;
+    background-color: #6eb2df;
+}
+
+main.mainPrincipal hr{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+div.divComentarios{
+    width: 80%;
+    margin-left: 5%;
+    padding: 5%;
+    padding-top: 1%;
+}
+
+div.divComentarios h1{
+    font-size: 4vmin;
+    color: #db7093;
+}
+
+div.divComentarios input{
+    width: 60%;
+    padding: 2%;
+}
+
+@keyframes hoverButtonColor {
+    from {color: #DB7093;}
+    to {color: #6eb2df;}
+}
+
+div.divComentarios button{
+    margin-left: 2%;
+    font-size: 4vmin;
+    border: none;
+    background: transparent;
+    color: #DB7093;
+    cursor: pointer;
+}
+
+div.divComentarios button:hover{
+    animation-name: hoverButtonColor;
+    animation-duration: 1s;
+    color: #6eb2df;
+}
+
+li.comentarioDiv{
+    padding: 2%;
+    background: #FFF;
+    margin-top: 2%;
+    border-radius: 25px;
+    width: 60%;
+    list-style-type: none;
+}
+
+li.comentarioDiv h1{
+    font-size: 3vmin;
+}
+
+li.comentarioDiv p{
+    font-size: 2.5vmin;
+}
+
+li.comentarioDiv p:nth-child(3){
+    font-size: 2vmin;
+    font-style: italic;
+}
+
+div.divComentarios button.buttonComentario{
+    font-size: 3vmin;
+    border: none;
+    background: transparent;
+    color: #DB7093;
+    cursor: pointer;
+    margin-top: 2%;
+}
+
+main.mainPrincipalInfos{
+    width: 100%;
+    background-color: #D9D9D9;
+    position: relative;
+    padding-top: 5%;
+    padding-bottom: 8%; text-align: center;
+}
+
+main.mainPrincipalInfos h1{
+    color: #DB7093;
+    font-size: 5vmin;
+}
+
+main.mainPrincipalInfos p{
+    font-size: 3vmin;
+}
+
+main.mainPrincipalInfos hr{
+    width: 50%; margin-left: 25%;
+    margin-top: 3%; margin-bottom: 3%;
+}
+
+section.meuCarrinhoSection{
+    width: 80%;
+    padding: 3%;
+    background: #FFF;
+    border-radius: 25px;
+    margin-left: 7%;
+}
+
+section.meuCarrinhoSection ul{
+    width: 100%;
+    height: 100%;
+    margin-left: -2%;
+}
+
+li.itemCarrinho{
+    list-style: none;
+    width: 80%;
+    margin-left: 10%;
+    padding: 3%;
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 3%;
+}
+
+div.itemCarrinhoInfo{
+    width: 50%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    margin-left: 10%;
+}
+
+div.itemCarrinhoInfo img{
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    width: 100%; border-radius: 25px;
+}
+
+div.itemCarrinhoInfo h1, p{
+    grid-column-start: 2;
+    text-align: center;
+}
+
+div.itemCarrinhoBtns{
+    width: 30%;
+    grid-template-rows: 17.5% 20% 20% 20% 17.5%;
+    display: grid;
+    grid-row-gap: 3%;
+}
+
+@keyframes buttonAnimation {
+    from {background-color: #DB7093; color: #6eb2df;}
+    to {background-color: #6eb2df; color: #FFF;}
+}
+
+div.itemCarrinhoBtns button{
+    grid-row-start: 2;
+    width: 30%;
+    margin-left: 40%;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #DB7093;
+    color: #6eb2df;
+    font-size: 3vmin;
+    border: none
+}
+
+div.itemCarrinhoBtns button:hover{
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+    background-color: #6eb2df;
+    color: #FFF;
+}
+
+section.meuCarrinhoSection h1.mc{
+    text-align: center;
+    font-size: 5vmin;
+    color: #db7093;
+    font-weight: bold;
+}
+
+button.actionsCarrinho{
+    width: 15%;
+    padding: 2%;
+    background: #DB7093;
+    color: #FFF;
+    font-size: 3vmin;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+button.actionsCarrinho:hover{
+    animation-name: buttonAnimation;
+    animation-duration: 1s;
+}

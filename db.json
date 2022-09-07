@@ -1,0 +1,70 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "senha": "12345",
+      "celular": "111111",
+      "cep": "111111"
+    },
+    {
+      "id": 2,
+      "username": "Usuario x",
+      "email": "user@gmail.com",
+      "senha": "54321",
+      "celular": "111111",
+      "cep": "111111"
+    },
+    {
+      "id": 3,
+      "username": "teste",
+      "email": "teste@gmail.com",
+      "senha": "24680",
+      "celular": "11 90523742",
+      "cep": "06654615"
+    }
+  ],
+  "doces": [
+    {
+      "id": 1,
+      "nome": "Brownie de Leite ninho com morango",
+      "imagem": "../assets/images/imagem1.jpg",
+      "description": "Brownie recheado com leite ninho e decorado com morango",
+      "valor": "R$45,00",
+      "quantidade": 1
+    },
+    {
+        "id": 2,
+        "nome": "Surpresa de uva",
+        "imagem": "../assets/images/imagem2.jpg",
+        "description": "Surpresa de uva em formato de casquinha de sorvete",
+        "valor": "R$50,00",
+        "quantidade": 1
+    },
+    {
+        "id": 3,
+        "nome": "Torta de chocolate com morango",
+        "imagem": "../assets/images/imagem3.jpg",
+        "description": "Torta de chocolate recheado com chocolate e leite ninho",
+        "valor": "R$80,00",
+        "quantidade": 1
+    },
+    {
+        "id": 4,
+        "nome": "Barra de prestigio",
+        "imagem": "../assets/images/imagem4.jpg",
+        "description": "Barra de chocolate recheada com prestígio",
+        "valor": "R$35,00",
+        "quantidade": 1
+    },
+    {
+        "id": 5,
+        "nome": "Barra de ovomaltine",
+        "imagem": "../assets/images/imagem5.jpg",
+        "description": "Barra de chocolate feita com Ovomaltine",
+        "valor": "R$35,00",
+        "quantidade": 1
+    }
+  ]
+}
