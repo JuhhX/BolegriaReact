@@ -28,7 +28,7 @@ export default function InfosPrincipais(){
 
                     <h1 id="RedesSociais">Redes Sociais</h1>
                     <a href="https://www.instagram.com/bolegria.nopote/"><button>Instagram</button></a>
-                    <a href="https://api.whatsapp.com/send/?phone=551195978692"><button>WhatsApp</button></a>
+                    <a href="https://api.whatsapp.com/send/?phone=xxxxxxxxxx"><button>WhatsApp</button></a>
                     <hr />
 
                     <h1>Sobre o sistema</h1>
